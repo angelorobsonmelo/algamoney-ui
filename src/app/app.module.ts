@@ -10,6 +10,14 @@ import { LancamentosPesquisaComponent } from './lancamentos-pesquisa/lancamentos
 import { NavbarComponent } from './navbar/navbar.component';
 import { PessoasPesquisaComponent } from './pessoas-pesquisa/pessoas-pesquisa.component';
 import { CampoColoridoDirective } from './campo-colorido.directive';
+import { FormsComponent } from './forms/forms.component';
+import {FormsModule} from '@angular/forms';
+import { LancamentoCadastroComponent } from './lancamento-cadastro/lancamento-cadastro.component';
+import {InputTextareaModule} from 'primeng/components/inputtextarea/inputtextarea';
+import {CalendarModule} from 'primeng/components/calendar/calendar';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {SelectButtonModule} from 'primeng/components/selectbutton/selectbutton';
+
 
 
 @NgModule({
@@ -18,14 +26,21 @@ import { CampoColoridoDirective } from './campo-colorido.directive';
     LancamentosPesquisaComponent,
     NavbarComponent,
     PessoasPesquisaComponent,
-    CampoColoridoDirective
+    CampoColoridoDirective,
+    FormsComponent,
+    LancamentoCadastroComponent
   ],
   imports: [
     BrowserModule,
     InputTextModule,
     ButtonModule,
     DataTableModule,
-    TooltipModule
+    TooltipModule,
+    FormsModule,
+    InputTextareaModule,
+    CalendarModule,
+    BrowserAnimationsModule,
+    SelectButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

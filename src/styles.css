@@ -1,10 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
 body {
   margin: 0;
-  font-family: Arial, Verdana, SansSerif;
+  font-family: Arial, Helvetica, sans-serif;
   color: #404C51;
 }
 
-label{
+a {
+  color: #337ab7;
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  text-decoration: underline;
+}
+
+label {
   font-weight: bold;
 }
 
@@ -29,4 +39,3 @@ label{
   width: 90px;
   text-align: center;
 }
-
