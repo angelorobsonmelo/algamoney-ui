@@ -6,10 +6,7 @@ import {AppComponent} from './app.component';
 import {PessoasModule} from './pessoas/pessoas.module';
 import {LancamentosModule} from './lancamentos/lancamentos.module';
 import {CoreModule} from './core/core.module';
-import {LancamentoService} from './lancamentos/lancamento.service';
 import {HttpModule} from '@angular/http';
-import {PessoasService} from './pessoas/pessoas.service';
-import {ToastyModule} from "ng2-toasty";
 
 
 @NgModule({
@@ -20,12 +17,13 @@ import {ToastyModule} from "ng2-toasty";
     BrowserModule,
     BrowserAnimationsModule,
     HttpModule,
-    ToastyModule.forRoot(),
+
+
     LancamentosModule,
     PessoasModule,
     CoreModule
   ],
-  providers: [LancamentoService, PessoasService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
