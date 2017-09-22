@@ -1,22 +1,39 @@
+import {RouterModule} from '@angular/router';
 import {LOCALE_ID, NgModule} from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {NavbarComponent} from './navbar/navbar.component';
-import {ErrorHandlerService} from './error-handler.service';
+import {CommonModule} from '@angular/common';
+
+import {ConfirmationService} from 'primeng/components/common/api';
+import {ConfirmDialogModule} from 'primeng/components/confirmdialog/confirmdialog';
 import {ToastyModule} from 'ng2-toasty';
-import {ConfirmationService, ConfirmDialogModule} from 'primeng/primeng';
-import {LancamentoService} from '../lancamentos/lancamento.service';
-import {PessoasService} from '../pessoas/pessoas.service';
-import {CategoriaService} from '../categorias/categoria.service';
+
+import {ErrorHandlerService} from './error-handler.service';
+import {PessoasService} from './../pessoas/pessoas.service';
+import {LancamentoService} from './../lancamentos/lancamento.service';
+import {CategoriaService} from './../categorias/categoria.service';
+import {NavbarComponent} from './navbar/navbar.component';
 
 @NgModule({
   imports: [
     CommonModule,
+    RouterModule,
 
     ToastyModule.forRoot(),
     ConfirmDialogModule,
   ],
   declarations: [NavbarComponent],
-  exports: [NavbarComponent, ToastyModule, ConfirmDialogModule],
-  providers: [ErrorHandlerService, LancamentoService, PessoasService, CategoriaService, ConfirmationService, { provide: LOCALE_ID, useValue: 'pt-BR' }]
+  exports: [
+    NavbarComponent,
+    ToastyModule,
+    ConfirmDialogModule
+  ],
+  providers: [
+    LancamentoService,
+    PessoasService,
+    CategoriaService,
+    ErrorHandlerService,
+
+    ConfirmationService,
+    { provide: LOCALE_ID, useValue: 'pt-BR' }
+  ]
 })
 export class CoreModule { }
