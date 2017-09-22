@@ -6,6 +6,7 @@ import {ToastyModule} from 'ng2-toasty';
 import {ConfirmationService, ConfirmDialogModule} from 'primeng/primeng';
 import {LancamentoService} from '../lancamentos/lancamento.service';
 import {PessoasService} from '../pessoas/pessoas.service';
+import {CategoriaService} from '../categorias/categoria.service';
 
 @NgModule({
   imports: [
@@ -16,6 +17,6 @@ import {PessoasService} from '../pessoas/pessoas.service';
   ],
   declarations: [NavbarComponent],
   exports: [NavbarComponent, ToastyModule, ConfirmDialogModule],
-  providers: [ErrorHandlerService, LancamentoService, PessoasService, ConfirmationService, { provide: LOCALE_ID, useValue: 'pt-BR' }]
+  providers: [ErrorHandlerService, LancamentoService, PessoasService, CategoriaService, ConfirmationService, { provide: LOCALE_ID, useValue: 'pt-BR' }]
 })
 export class CoreModule { }

@@ -5,7 +5,7 @@ import 'rxjs/add/operator/toPromise';
 export class PessoaFiltro {
   nome: string;
   pagina = 0;
-  itensDaPagina = 5;
+  itensPorPagina = 5;
 }
 
 @Injectable()
@@ -20,7 +20,7 @@ export class PessoasService {
 
     headers.append('Authorization', 'Basic YWRtaW5AYWxnYW1vbmV5LmNvbTphZG1pbg==');
     params.set('page', filtro.pagina.toString());
-    params.set('size', filtro.itensDaPagina.toString());
+    params.set('size', filtro.itensPorPagina.toString());
 
     if(filtro.nome){
       params.set('nome', filtro.nome);
@@ -51,4 +51,22 @@ export class PessoasService {
   }
 
 
+  excluir(codigo: number): Promise<any> {
+    const headers = new Headers();
+    headers.append('Authorization', 'Basic YWRtaW5AYWxnYW1vbmV5LmNvbTphZG1pbg==');
+
+    return this.http.delete(`${this.pessoasUrl}/${codigo}`, {headers})
+      .toPromise()
+      .then(() => null);
+  }
+
+  mudarStatus(codigo: number, ativo: boolean): Promise<void> {
+    const headers = new Headers();
+    headers.append('Authorization', 'Basic YWRtaW5AYWxnYW1vbmV5LmNvbTphZG1pbg==');
+    headers.append('Content-Type', 'application/json');
+
+    return this.http.put(`${this.pessoasUrl}/${codigo}/ativo`, ativo, { headers })
+      .toPromise()
+      .then(() => null);
+  }
 }
