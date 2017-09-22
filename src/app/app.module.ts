@@ -9,6 +9,7 @@ import {CoreModule} from './core/core.module';
 import {LancamentoService} from './lancamentos/lancamento.service';
 import {HttpModule} from '@angular/http';
 import {PessoasService} from './pessoas/pessoas.service';
+import {ToastyModule} from "ng2-toasty";
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import {PessoasService} from './pessoas/pessoas.service';
     BrowserModule,
     BrowserAnimationsModule,
     HttpModule,
+    ToastyModule.forRoot(),
     LancamentosModule,
     PessoasModule,
     CoreModule
