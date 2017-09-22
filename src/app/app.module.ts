@@ -6,8 +6,9 @@ import {AppComponent} from './app.component';
 import {PessoasModule} from './pessoas/pessoas.module';
 import {LancamentosModule} from './lancamentos/lancamentos.module';
 import {CoreModule} from './core/core.module';
-import {LancamentoService} from "./lancamentos/lancamento.service";
-import {HttpModule} from "@angular/http";
+import {LancamentoService} from './lancamentos/lancamento.service';
+import {HttpModule} from '@angular/http';
+import {PessoasService} from './pessoas/pessoas.service';
 
 
 @NgModule({
@@ -22,7 +23,7 @@ import {HttpModule} from "@angular/http";
     PessoasModule,
     CoreModule
   ],
-  providers: [LancamentoService],
+  providers: [LancamentoService, PessoasService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

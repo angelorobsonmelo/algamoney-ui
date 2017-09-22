@@ -55,7 +55,7 @@ export class LancamentoService {
         };
 
         return resultado;
-      })
+      });
   }
 
 }
