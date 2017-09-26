@@ -10,7 +10,7 @@ export class PessoaFiltro {
 }
 
 @Injectable()
-export class PessoasService {
+export class PessoaService {
 
   pessoasUrl = 'http://localhost:8080/pessoas';
   constructor(private http: Http) { }

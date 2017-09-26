@@ -7,7 +7,7 @@ import {ConfirmDialogModule} from 'primeng/components/confirmdialog/confirmdialo
 import {ToastyModule} from 'ng2-toasty';
 
 import {ErrorHandlerService} from './error-handler.service';
-import {PessoasService} from './../pessoas/pessoas.service';
+import {PessoaService} from '../pessoas/pessoa.service';
 import {LancamentoService} from './../lancamentos/lancamento.service';
 import {CategoriaService} from './../categorias/categoria.service';
 import {NavbarComponent} from './navbar/navbar.component';
@@ -28,7 +28,7 @@ import {NavbarComponent} from './navbar/navbar.component';
   ],
   providers: [
     LancamentoService,
-    PessoasService,
+    PessoaService,
     CategoriaService,
     ErrorHandlerService,
 

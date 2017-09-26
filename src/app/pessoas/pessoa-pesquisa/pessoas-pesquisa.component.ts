@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {PessoaFiltro, PessoasService} from '../pessoas.service';
+import {PessoaFiltro, PessoaService} from '../pessoa.service';
 import {LazyLoadEvent} from 'primeng/primeng';
 import {ConfirmationService} from 'primeng/components/common/api';
 import {ToastyService} from 'ng2-toasty';
@@ -18,7 +18,7 @@ export class PessoasPesquisaComponent implements OnInit{
 
   ngOnInit(){}
 
-  constructor(private pessoasService: PessoasService, private confirmation: ConfirmationService, private toasty: ToastyService, private errorHandler: ErrorHandlerService) {}
+  constructor(private pessoasService: PessoaService, private confirmation: ConfirmationService, private toasty: ToastyService, private errorHandler: ErrorHandlerService) {}
 
   pesquisar(pagina = 0) {
     this.filtro.pagina = pagina;

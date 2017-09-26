@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Pessoa} from '../../core/model';
-import {PessoasService} from '../pessoas.service';
+import {PessoaService} from '../pessoa.service';
 import {FormControl} from '@angular/forms';
 import {ErrorHandlerService} from '../../core/error-handler.service';
 import {ToastyService} from 'ng2-toasty';
@@ -14,7 +14,7 @@ export class PessoaCadastroComponent implements OnInit {
 
   pessoa = new Pessoa();
 
-  constructor(private PessoaService: PessoasService, private errorHandler: ErrorHandlerService, private toasty: ToastyService) { }
+  constructor(private PessoaService: PessoaService, private errorHandler: ErrorHandlerService, private toasty: ToastyService) { }
 
   ngOnInit() {
   }
