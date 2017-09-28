@@ -13,6 +13,8 @@ import {CategoriaService} from './../categorias/categoria.service';
 import {NavbarComponent} from './navbar/navbar.component';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component';
 import {Title} from '@angular/platform-browser';
+import {AuthService} from '../seguranca/auth.service';
+import {JwtHelper} from 'angular2-jwt';
 
 @NgModule({
   imports: [
@@ -34,7 +36,9 @@ import {Title} from '@angular/platform-browser';
     CategoriaService,
     ErrorHandlerService,
     ConfirmationService,
+    JwtHelper,
     Title,
+    AuthService,
     { provide: LOCALE_ID, useValue: 'pt-BR' }
   ]
 })
