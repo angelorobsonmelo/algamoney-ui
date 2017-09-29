@@ -11,7 +11,7 @@ import { TooltipModule } from 'primeng/components/tooltip/tooltip';
 import { SharedModule } from './../shared/shared.module';
 import { PessoasPesquisaComponent } from './pessoas-pesquisa/pessoas-pesquisa.component';
 import { PessoaCadastroComponent } from './pessoa-cadastro/pessoa-cadastro.component';
-import {PessoaRoutingModule} from './pessoa-routing.module';
+import { PessoasRoutingModule } from './pessoas-routing.module';
 
 @NgModule({
   imports: [
@@ -25,11 +25,11 @@ import {PessoaRoutingModule} from './pessoa-routing.module';
     InputMaskModule,
 
     SharedModule,
-    PessoaRoutingModule
+    PessoasRoutingModule
   ],
   declarations: [
     PessoaCadastroComponent,
-    PessoasPesquisaComponent,
+    PessoasPesquisaComponent
   ],
   exports: []
 })

@@ -30,4 +30,3 @@ export class Lancamento {
   pessoa = new Pessoa();
   categoria = new Categoria();
 }
-

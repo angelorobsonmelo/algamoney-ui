@@ -46,7 +46,7 @@ export class LancamentoService {
     }
 
     return this.http.get(`${this.lancamentosUrl}?resumo`,
-      { search: params })
+        { search: params })
       .toPromise()
       .then(response => {
         const responseJson = response.json();
@@ -69,14 +69,14 @@ export class LancamentoService {
 
   adicionar(lancamento: Lancamento): Promise<Lancamento> {
     return this.http.post(this.lancamentosUrl,
-      JSON.stringify(lancamento))
+        JSON.stringify(lancamento))
       .toPromise()
       .then(response => response.json());
   }
 
   atualizar(lancamento: Lancamento): Promise<Lancamento> {
     return this.http.put(`${this.lancamentosUrl}/${lancamento.codigo}`,
-      JSON.stringify(lancamento))
+        JSON.stringify(lancamento))
       .toPromise()
       .then(response => {
         const lancamentoAlterado = response.json() as Lancamento;

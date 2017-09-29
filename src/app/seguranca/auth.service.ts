@@ -4,16 +4,19 @@ import { Injectable } from '@angular/core';
 import { JwtHelper } from 'angular2-jwt';
 import 'rxjs/add/operator/toPromise';
 
+import { environment } from './../../environments/environment';
+
 @Injectable()
 export class AuthService {
 
-  oauthTokenUrl = 'http://localhost:8080/oauth/token';
+  oauthTokenUrl: string;
   jwtPayload: any;
 
   constructor(
     private http: Http,
     private jwtHelper: JwtHelper
   ) {
+    this.oauthTokenUrl = `${environment.apiUrl}/oauth/token`;
     this.carregarToken();
   }
 
@@ -25,7 +28,7 @@ export class AuthService {
     const body = `username=${usuario}&password=${senha}&grant_type=password`;
 
     return this.http.post(this.oauthTokenUrl, body,
-      { headers, withCredentials: true })
+        { headers, withCredentials: true })
       .toPromise()
       .then(response => {
         this.armazenarToken(response.json().access_token);
@@ -51,7 +54,7 @@ export class AuthService {
     const body = 'grant_type=refresh_token';
 
     return this.http.post(this.oauthTokenUrl, body,
-      { headers, withCredentials: true })
+        { headers, withCredentials: true })
       .toPromise()
       .then(response => {
         this.armazenarToken(response.json().access_token);
